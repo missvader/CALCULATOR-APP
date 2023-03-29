@@ -15,10 +15,30 @@ import { Container,
         } from './App.style';
 
 function App() {
+  //valores de los botones
+  const [value, setValue] = useState("")
+  //estados del tema(colores), por defecto inicia en 1 que equivaldrá al GlobalStyle1
+  const [theme, setTheme] = useState(1)
+  const [themeValue, setThemeValue] = useState("8%")
+
+  const handleTheme = () => {
+    if(theme === 1){
+      setTheme(2)
+      setThemeValue("38%")
+    }else if (theme === 2){
+      setTheme(3)
+      setThemeValue("70%")
+    }else{
+      setTheme(1)
+      setThemeValue("8%")
+    }
+  }
 
   return (
     <>
-      {<GlobalStyle1/>}
+      { theme === 1 && <GlobalStyle1/>}
+      { theme === 2 && <GlobalStyle2/>}
+      { theme === 3 && <GlobalStyle3/>}
         <Container>
           <Header>
             Calc
@@ -30,8 +50,8 @@ function App() {
                   <span>2</span>
                   <span>3</span>
                   </div>
-                <SwitcherContainer>
-                  <Switcher/>
+                <SwitcherContainer onClick={handleTheme}>
+                  <Switcher theme={themeValue}/>
                 </SwitcherContainer>
               </Switch>
             </WrapperSwitch>
