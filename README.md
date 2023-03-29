@@ -2,7 +2,7 @@
 
 Calculator App based on Frontend Mentor challenge design.
 
-* Perform mathematical operatios like addition, substraction, multiplication, and division
+* Perform mathematical operations like addition, substraction, multiplication, and division
 * Size of elements adjust based on device´s screen size
 * User can adjust color theme based on their preference
 
