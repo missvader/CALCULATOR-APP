@@ -22,6 +22,12 @@ function App() {
   //themeValue cambia el color del botoncito switcher
   const [themeValue, setThemeValue] = useState("8%")
 
+  const calc = () => {
+    if (value.length >= 5 && value.slice(-1) !== " ") {
+      setValue(eval(value).toString());
+    }
+  } 
+
   /*----boton DEL para borrar valores del input ----*/
   const deleteValue = () => {
     if(value.slice(-1) === " "){    //si input está vacio, state vacio(valor anterior es = " ")
@@ -113,12 +119,14 @@ function App() {
               color="var(--white)"
               bg="var(--key-background-dark-blue)"
               bdbox='var(--key-shadow-dark-blue)'
+              onClick={() => setValue("")}
             >RESET</Button>
             <Button
               gc="3/5"
               color="var(--white)"
               bg="var(--key-background-red)"
               bdbox='var(--key-shadow-dark-red)'
+              onClick={calc}
             >=</Button>
           </ButtonContainer>
         </Container>
