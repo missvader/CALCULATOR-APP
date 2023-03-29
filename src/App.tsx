@@ -1,34 +1,78 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import GlobalStyle1 from './styles/theme1';
+import GlobalStyle2 from './styles/theme2';
+import GlobalStyle3 from './styles/theme3';
+
+import { Container, 
+         Header,
+         WrapperSwitch, 
+         Switch,
+         SwitcherContainer,
+         Switcher,
+         Input,
+         ButtonContainer,
+         Button
+        } from './App.style';
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </div>
+    <>
+      {<GlobalStyle1/>}
+        <Container>
+          <Header>
+            Calc
+            <WrapperSwitch>
+              theme
+              <Switch>
+                <div>
+                  <span>1</span>
+                  <span>2</span>
+                  <span>3</span>
+                  </div>
+                <SwitcherContainer>
+                  <Switcher/>
+                </SwitcherContainer>
+              </Switch>
+            </WrapperSwitch>
+          </Header>
+          <Input></Input>
+          <ButtonContainer>
+            <Button>7</Button>
+            <Button>8</Button>
+            <Button>9</Button>
+            <Button
+             color="var(--white)"
+             bg="var(--key-background-dark-blue)"
+             bdbox='var(--key-shadow-dark-blue)' 
+            >DEL</Button>
+            <Button>4</Button>
+            <Button>5</Button>
+            <Button>6</Button>
+            <Button>+</Button>
+            <Button>1</Button>
+            <Button>2</Button>
+            <Button>3</Button>
+            <Button>-</Button>
+            <Button>.</Button>
+            <Button>0</Button>
+            <Button>/</Button>
+            <Button>x</Button>
+            <Button
+              gc="1/3"
+              color="var(--white)"
+              bg="var(--key-background-dark-blue)"
+              bdbox='var(--key-shadow-dark-blue)'
+            >RESET</Button>
+            <Button
+              gc="3/5"
+              color="var(--white)"
+              bg="var(--key-background-red)"
+              bdbox='var(--key-shadow-dark-red)'
+            >=</Button>
+          </ButtonContainer>
+        </Container>
+    </>
   )
 }
 
