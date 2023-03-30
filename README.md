@@ -17,3 +17,4 @@ Calculator App based on Frontend Mentor challenge design.
   - TypeScript
   - [React](https://reactjs.org/) - JS library
   - [Styled Components](https://styled-components.com/) - For styles
+  - hello 
